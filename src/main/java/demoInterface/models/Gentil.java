@@ -1,5 +1,7 @@
 package demoInterface.models;
 
+import demoInterface.models.interfaces.IGold;
+import demoInterface.models.interfaces.ILeather;
 import demoInterface.models.interfaces.IPlayableCharacter;
 
 public class Gentil extends Character implements IPlayableCharacter {
@@ -27,5 +29,15 @@ public class Gentil extends Character implements IPlayableCharacter {
     @Override
     public void seDeplacer() {
         System.out.println("1 2 3 je m'en vais dans les bois...");
+    }
+
+    public void loot(Character target){
+
+        if(target instanceof ILeather){
+            System.out.println("Merci pour le cuir looser");
+        }
+        if(target instanceof IGold){
+            System.out.println("Merci pour l'or radin!");
+        }
     }
 }
